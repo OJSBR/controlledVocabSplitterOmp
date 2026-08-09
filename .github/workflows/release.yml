@@ -1,0 +1,40 @@
+name: Package plugin
+
+# When a tag is pushed (e.g. `git tag 1.2.0.0 && git push --tags`, or when a
+# GitHub Release is created), build the installable plugin package and attach it
+# to the matching Release automatically.
+#
+# The tarball unpacks as `<application>/…`, taken from version.xml — NOT from the
+# repository name. On this repository the two differ: the repo carries an `Omp`
+# suffix to avoid colliding with the OJS edition, while the plugin folder must stay
+# `<application>`, because PKP 3.5 derives the plugin's class namespace from the
+# installation directory (PluginRegistry::instantiatePlugin). Installing it under
+# any other folder name would stop the plugin from loading. Same rule as ghcr.yml.
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build installable tarball
+        run: |
+          NAME=$(grep -oP '(?<=<application>)[^<]+' version.xml | head -1)
+          TAG="${{ github.ref_name }}"
+          git archive --format=tar.gz --prefix="$NAME/" -o "$NAME-$TAG.tar.gz" HEAD
+          ls -l "$NAME-$TAG.tar.gz"
+          echo "ASSET=$NAME-$TAG.tar.gz" >> "$GITHUB_ENV"
+
+      - name: Attach package to the Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ASSET }}
