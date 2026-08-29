@@ -1,10 +1,10 @@
 # Controlled Vocabulary Splitter — OMP plugin
 
 [![OMP](https://img.shields.io/badge/OMP-3.5-brightgreen)](https://pkp.sfu.ca/omp/)
-[![Version](https://img.shields.io/badge/version-1.0.0.0-blue)](version.xml)
+[![Version](https://img.shields.io/badge/version-1.0.0.1-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
-**⬇️ Install package:** [OMP 3.5](https://github.com/OJSBR/controlledVocabSplitterOmp/releases/download/1.0.0.0-omp3.5/controlledVocabSplitter-1.0.0.0-omp3.5.tar.gz) — or browse all [Releases](../../releases).
+**⬇️ Install package:** [OMP 3.5](https://github.com/OJSBR/controlledVocabSplitterOmp/releases/download/1.0.0.1/controlledVocabSplitter-1.0.0.1.tar.gz) — or browse all [Releases](../../releases).
 
 A generic plugin for **Open Monograph Press (OMP)** that splits **keywords, subjects,
 disciplines and supporting agencies pasted as a single line** into the separate terms the
@@ -17,7 +17,7 @@ author meant — in the field itself and on every save — **without patching OM
 
 | OMP version | Branch | Plugin release |
 |-------------|--------|----------------|
-| OMP 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.0.0.0 |
+| OMP 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.0.0.1 |
 
 **Looking for the OJS edition?** It lives in its own repository,
 [OJSBR/controlledVocabSplitter](https://github.com/OJSBR/controlledVocabSplitter). This repository is the same plugin with the
@@ -191,7 +191,7 @@ quis dizer — no próprio campo e em toda gravação — **sem alterar o núcle
 
 | Versão do OMP | Branch | Release do plugin |
 |---------------|--------|-------------------|
-| OMP 3.5.x     | [`stable-3_5_0`](../../tree/stable-3_5_0) *(padrão)* | 1.0.0.0 |
+| OMP 3.5.x     | [`stable-3_5_0`](../../tree/stable-3_5_0) *(padrão)* | 1.0.0.1 |
 
 **Procurando a versão de OJS?** Ela tem repositório próprio,
 [OJSBR/controlledVocabSplitter](https://github.com/OJSBR/controlledVocabSplitter). Este repositório é o mesmo plugin com a
